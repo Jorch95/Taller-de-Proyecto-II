@@ -1,0 +1,3 @@
+https://www.python.org/download/releases/2.7.6/
+https://bootstrap.pypa.io/get-pip.py
+Flask
