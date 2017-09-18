@@ -19,6 +19,8 @@ def calcularPromedio():
     suma.velocidad /= len(index.muestras)
     return suma
 
+frecuencia = 5 #por defecto
+
 @aplicacion.route('/')
 def index():
     pos = index.pos
@@ -32,8 +34,17 @@ def index():
     else:
         index.pos += 1
     promedio = calcularPromedio()
-    frecuencia = "ACA VA LA FRECUENCIA DE MUESTREO"
     return render_template('response.html', ultima=index.muestras[pos], prom=promedio, frec=frecuencia)
+
+@aplicacion.route('/', methods = ['POST'])
+def action_form():
+
+    if request.method == 'POST':
+        data = request.form
+        global frecuencia
+        frecuencia = data["frecuencia"]
+        return index()
+
 
 index.lleno = False
 index.pos = 0
