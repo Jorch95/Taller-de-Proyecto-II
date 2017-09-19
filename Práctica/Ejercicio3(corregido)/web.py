@@ -20,7 +20,7 @@ def calcularPromedio():
     suma.velocidad /= len(index.muestras)
     return suma
 
-frecuencia = 5 #por defecto
+frecuencia = 5 # por defecto para que se pueda ingresar bien los valores
 
 @aplicacion.route('/')
 def index():
