@@ -4,7 +4,7 @@ from flask import request
 from flask import render_template
 from readfile import devolverValores
 from muestra import Muestra
-aplicacion = Flask(__name__, static_url_path='/static')
+aplicacion = Flask(__name__)
 
 def calcularPromedio():
     suma = Muestra(0, 0, 0, 0)
